@@ -10,8 +10,8 @@ namespace TDD_Training
             try
             {
                 var inputNumber = int.Parse(Console.ReadLine());
-                FindMultiples findMultiples = new FindMultiples();
-                findMultiples.FindMultiple(inputNumber);
+                FizzBuzzService fizzBuzzService = new FizzBuzzService();
+                fizzBuzzService.isMultipleOf(inputNumber);
             }
             catch(Exception ex)
             {

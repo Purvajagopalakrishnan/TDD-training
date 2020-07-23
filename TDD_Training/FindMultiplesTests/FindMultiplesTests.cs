@@ -6,7 +6,7 @@ namespace FindMultiplesTests
 {
     public class FindMultiplesTests
     {
-        private readonly FindMultiples findMultiplesService = new FindMultiples();
+        private readonly FizzBuzzService _findMultiples = new FizzBuzzService();
 
         [Fact]
         public void CheckGivenNumber_IfMultipleOfThree_ReturnsFizz()
@@ -16,7 +16,7 @@ namespace FindMultiplesTests
             var expected = "Fizz";
 
             //Act
-            var actual = findMultiplesService.FindMultiple(value);
+            var actual = _findMultiples.isMultipleOf(value);
 
             //Assert
             Assert.Equal(expected, actual);
@@ -32,7 +32,7 @@ namespace FindMultiplesTests
             var expected = "Fizz";
 
             //Act
-            var actual = findMultiplesService.FindMultiple(value);
+            var actual = _findMultiples.isMultipleOf(value);
 
             //Assert
             Assert.Equal(expected, actual);
@@ -48,7 +48,7 @@ namespace FindMultiplesTests
             var expected = "Buzz";
 
             //Act
-            var actual = findMultiplesService.FindMultiple(value);
+            var actual = _findMultiples.isMultipleOf(value);
 
             //Assert
             Assert.Equal(expected, actual);
@@ -64,7 +64,7 @@ namespace FindMultiplesTests
             var expected = "FizzBuzz";
 
             //Act
-            var actual = findMultiplesService.FindMultiple(value);
+            var actual = _findMultiples.isMultipleOf(value);
 
             //Assert
             Assert.Equal(expected, actual);
@@ -80,7 +80,7 @@ namespace FindMultiplesTests
             var expected = Convert.ToString(value);
 
             //Act
-            var actual = findMultiplesService.FindMultiple(value);
+            var actual = _findMultiples.isMultipleOf(value);
 
             //Assert
             Assert.Equal(expected, actual);
