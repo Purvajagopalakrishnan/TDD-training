@@ -11,11 +11,10 @@ namespace TDD_Training
             {
                 var inputNumber = int.Parse(Console.ReadLine());
                 FizzBuzzService fizzBuzzService = new FizzBuzzService();
-                fizzBuzzService.isMultipleOf(inputNumber);
+                fizzBuzzService.CheckFizzBuzz(inputNumber);
             }
-            catch(Exception ex)
+            catch(Exception)
             {
-                Console.WriteLine(ex.Message);
                 Console.WriteLine("Enter a valid number");
             }
         }

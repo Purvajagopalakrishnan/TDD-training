@@ -4,22 +4,31 @@ namespace TDD_Training
 {
     public class FizzBuzzService
     {
-        public string isMultipleOf(int givenNumber)
+        public string CheckFizzBuzz(int givenNumber)
         {
-            if (givenNumber % 3 == 0 && givenNumber % 5 == 0)
+            switch(givenNumber % 3 == 0 && givenNumber % 5 == 0 ? "FizzBuzz" : 
+                givenNumber % 3 == 0 ? "Fizz" :
+                givenNumber % 5 == 0 ? "Buzz" :
+                Convert.ToString(givenNumber))
             {
-                return "FizzBuzz";
+                case "Fizz":
+                {
+                    return "Fizz";
+                }
+                case "Buzz":
+                {
+                        return "Buzz";
+                       
+                }
+                case "FizzBuzz":
+                {
+                        return "FizzBuzz";
+                }
+                default:
+                {
+                        return Convert.ToString(givenNumber);
+                }
             }
-            if (givenNumber % 3 == 0)
-            {
-                return "Fizz";
-            }
-            if (givenNumber % 5 == 0)
-            {
-                return "Buzz";
-            }
-            Console.WriteLine(givenNumber);
-            return Convert.ToString(givenNumber);
         }
     }
 }
