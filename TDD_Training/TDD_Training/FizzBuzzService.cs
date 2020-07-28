@@ -8,7 +8,7 @@ namespace TDD_Training
         {
             switch(givenNumber)
             {
-                case int _ when IsMultipleOfThreeOrFive(givenNumber) == true:
+                case int _ when IsMultipleOfThreeAndFive(givenNumber) == true:
                 {
                     return "FizzBuzz";
                 }
@@ -31,30 +31,17 @@ namespace TDD_Training
 
         public bool IsMultipleOfThree(int givenNumber)
         {
-            if(givenNumber % 3 == 0)
-            {
-                return true;
-            }
-            return false;
+            return givenNumber % 3 == 0;
         }
 
         public bool IsMultipleOfFive(int givenNumber)
         {
-            if(givenNumber % 5 == 0)
-            {
-                return true;
-            }
-            return false;
+            return givenNumber % 5 == 0;
         }
 
-        public bool IsMultipleOfThreeOrFive(int givenNumber)
+        public bool IsMultipleOfThreeAndFive(int givenNumber)
         {
-
-            if (IsMultipleOfThree(givenNumber) && IsMultipleOfFive(givenNumber))
-            {
-                return true;
-            }
-            return false;
+            return (IsMultipleOfThree(givenNumber) && IsMultipleOfFive(givenNumber));
         }
     }
 }
