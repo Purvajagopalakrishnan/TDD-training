@@ -71,6 +71,38 @@ namespace FizzBuzzServiceTests
             //Assert
             Assert.Equal(expected, actual);
         }
+
+        [Theory]
+        [InlineData(26)]
+        [InlineData(104)]
+        [InlineData(143)]
+        public void GivenNumberIsMultipleOfThirteen_IsMultipleOf_ReturnsJazz(int value)
+        {
+            //Arrange
+            var expected = Convert.ToString(value);
+
+            //Act
+            var actual = _fizzBuzzService.CheckFizzBuzz(value);
+
+            //Assert
+            Assert.Equal(expected, actual);
+        }
+
+        [Theory]
+        [InlineData(46)]
+        [InlineData(161)]
+        [InlineData(253)]
+        public void GivenNumberIsMultipleOfTwentyThree_IsMultipleOf_ReturnsWiz(int value)
+        {
+            //Arrange
+            var expected = Convert.ToString(value);
+
+            //Act
+            var actual = _fizzBuzzService.CheckFizzBuzz(value);
+
+            //Assert
+            Assert.Equal(expected, actual);
+        }
     }
 }
 
