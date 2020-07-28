@@ -6,29 +6,56 @@ namespace TDD_Training
     {
         public string CheckFizzBuzz(int givenNumber)
         {
-            switch(givenNumber % 3 == 0 && givenNumber % 5 == 0 ? "FizzBuzz" : 
-                givenNumber % 3 == 0 ? "Fizz" :
-                givenNumber % 5 == 0 ? "Buzz" :
-                Convert.ToString(givenNumber))
+            switch(givenNumber)
             {
-                case "Fizz":
+                case int _ when IsMultipleOfThreeOrFive(givenNumber) == true:
+                {
+                    return "FizzBuzz";
+                }
+
+                case int x when IsMultipleOfThree(givenNumber) == true:
                 {
                     return "Fizz";
                 }
-                case "Buzz":
+
+                case int x when IsMultipleOfFive(givenNumber) == true:
                 {
-                        return "Buzz";
-                       
-                }
-                case "FizzBuzz":
-                {
-                        return "FizzBuzz";
+                    return "Buzz";
                 }
                 default:
                 {
-                        return Convert.ToString(givenNumber);
+                    return Convert.ToString(givenNumber);
                 }
             }
         }
+
+        public bool IsMultipleOfThree(int givenNumber)
+        {
+            if(givenNumber % 3 == 0)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public bool IsMultipleOfFive(int givenNumber)
+        {
+            if(givenNumber % 5 == 0)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public bool IsMultipleOfThreeOrFive(int givenNumber)
+        {
+
+            if (IsMultipleOfThree(givenNumber) && IsMultipleOfFive(givenNumber))
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }
+
