@@ -10,12 +10,19 @@ namespace TDD_Training
             try
             {
                 var inputNumber = int.Parse(Console.ReadLine());
-                FizzBuzzService fizzBuzzService = new FizzBuzzService();
-                fizzBuzzService.CheckFizzBuzz(inputNumber);
+                if(inputNumber <= 0)
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
+                if (inputNumber > 0)
+                {
+                    FizzBuzzService fizzBuzzService = new FizzBuzzService();
+                    fizzBuzzService.CheckFizzBuzz(inputNumber);
+                }
             }
-            catch(Exception)
+            catch(ArgumentOutOfRangeException ex)
             {
-                Console.WriteLine("Enter a valid number");
+                Console.WriteLine("Enter a valid number", ex.Message);
             }
         }
     }
