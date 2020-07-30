@@ -103,6 +103,22 @@ namespace FizzBuzzServiceTests
             //Assert
             Assert.Equal(expected, actual);
         }
+
+        [Theory]
+        [InlineData(0)]
+        [InlineData(-5)]
+        [InlineData(-157)]
+        public void GivenNumberIsNegativeOrZero_IsMultipleOf_ThrowsException(int value)
+        {
+            //Arrange
+            var expected = new ArgumentOutOfRangeException();
+
+            //Act
+            var actual = Assert.Throws<ArgumentOutOfRangeException>(() => _fizzBuzzService.CheckFizzBuzz(value));
+
+            //Assert
+            Assert.Equal(expected.Message, actual.Message);
+        }
     }
 }
 
