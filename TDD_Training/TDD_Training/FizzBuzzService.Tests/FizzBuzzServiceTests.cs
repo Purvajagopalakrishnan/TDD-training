@@ -108,10 +108,10 @@ namespace FizzBuzzServiceTests
         [InlineData(0)]
         [InlineData(-5)]
         [InlineData(-157)]
-        public void GivenNumberIsNegativeOrZero_IsMultipleOf_ThrowsException(int value)
+        public void CheckFizzBuzz_GivenZeroOrNegativeNumber_ThrowsArgumentOutOfRangeException(int value)
         {
             //Arrange
-            var expected = new ArgumentOutOfRangeException();
+            var expected = new ArgumentOutOfRangeException("Input Number should be positive");
 
             //Act
             var actual = Assert.Throws<ArgumentOutOfRangeException>(() => _fizzBuzzService.CheckFizzBuzz(value));

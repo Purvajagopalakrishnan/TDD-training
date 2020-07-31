@@ -8,11 +8,7 @@ namespace TDD_Training
         {
             try
             {
-                if (givenNumber <= 0)
-                {
-                    throw new ArgumentOutOfRangeException();
-                }
-                else
+                if (givenNumber > 0)
                 {
                     switch (givenNumber)
                     {
@@ -40,14 +36,19 @@ namespace TDD_Training
                         {
                             return "Wiz";
                         }
+
                         default:
                         {
                             return Convert.ToString(givenNumber);
                         }
                     }
                 }
+                else
+                {
+                    throw new ArgumentOutOfRangeException(Convert.ToString(givenNumber), "Input Number should be positive");
+                }
             }
-            catch(Exception ex)
+            catch (ArgumentOutOfRangeException ex)
             {
                 return ex.Message;
             }
