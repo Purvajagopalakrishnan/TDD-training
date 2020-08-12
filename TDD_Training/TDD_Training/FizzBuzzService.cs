@@ -6,7 +6,12 @@ namespace TDD_Training
     {
         public string CheckFizzBuzz(int givenNumber)
         {
-            switch(givenNumber)
+            if (givenNumber <= 0)
+            {
+                throw new ArgumentOutOfRangeException(Convert.ToString(givenNumber), "Input Number should be positive");
+            }
+                
+            switch (givenNumber)
             {
                 case int _ when IsMultipleOfThreeAndFive(givenNumber) == true:
                 {
@@ -22,6 +27,17 @@ namespace TDD_Training
                 {
                     return "Buzz";
                 }
+
+                case int x when IsMultipleOfThirteen(givenNumber) == true:
+                {
+                    return "Jazz";
+                }
+
+                case int x when IsMultipleOfTwentyThree(givenNumber) == true:
+                {
+                    return "Wiz";
+                }
+
                 default:
                 {
                     return Convert.ToString(givenNumber);
@@ -42,6 +58,16 @@ namespace TDD_Training
         public bool IsMultipleOfThreeAndFive(int givenNumber)
         {
             return (IsMultipleOfThree(givenNumber) && IsMultipleOfFive(givenNumber));
+        }
+
+        public bool IsMultipleOfThirteen(int givenNumber)
+        {
+            return givenNumber % 13 == 0;
+        }
+
+        public bool IsMultipleOfTwentyThree(int givenNumber)
+        {
+            return givenNumber % 23 == 0;
         }
     }
 }
