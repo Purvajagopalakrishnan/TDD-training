@@ -6,51 +6,42 @@ namespace TDD_Training
     {
         public string CheckFizzBuzz(int givenNumber)
         {
-            try
+            if (givenNumber <= 0)
             {
-                if (givenNumber > 0)
-                {
-                    switch (givenNumber)
-                    {
-                        case int _ when IsMultipleOfThreeAndFive(givenNumber) == true:
-                        {
-                            return "FizzBuzz";
-                        }
-
-                        case int x when IsMultipleOfThree(givenNumber) == true:
-                        {
-                            return "Fizz";
-                        }
-
-                        case int x when IsMultipleOfFive(givenNumber) == true:
-                        {
-                            return "Buzz";
-                        }
-
-                        case int x when IsMultipleOfThirteen(givenNumber) == true:
-                        {
-                            return "Jazz";
-                        }
-
-                        case int x when IsMultipleOfTwentyThree(givenNumber) == true:
-                        {
-                            return "Wiz";
-                        }
-
-                        default:
-                        {
-                            return Convert.ToString(givenNumber);
-                        }
-                    }
-                }
-                else
-                {
-                    throw new ArgumentOutOfRangeException(Convert.ToString(givenNumber), "Input Number should be positive");
-                }
+                throw new ArgumentOutOfRangeException(Convert.ToString(givenNumber), "Input Number should be positive");
             }
-            catch (ArgumentOutOfRangeException ex)
+                
+            switch (givenNumber)
             {
-                return ex.Message;
+                case int _ when IsMultipleOfThreeAndFive(givenNumber) == true:
+                {
+                    return "FizzBuzz";
+                }
+
+                case int x when IsMultipleOfThree(givenNumber) == true:
+                {
+                    return "Fizz";
+                }
+
+                case int x when IsMultipleOfFive(givenNumber) == true:
+                {
+                    return "Buzz";
+                }
+
+                case int x when IsMultipleOfThirteen(givenNumber) == true:
+                {
+                    return "Jazz";
+                }
+
+                case int x when IsMultipleOfTwentyThree(givenNumber) == true:
+                {
+                    return "Wiz";
+                }
+
+                default:
+                {
+                    return Convert.ToString(givenNumber);
+                }
             }
         }
 

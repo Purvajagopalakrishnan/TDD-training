@@ -8,7 +8,7 @@ namespace TDD_Training
         {
             Console.WriteLine("Input number");
             var inputNumber = int.Parse(Console.ReadLine());
-            FizzBuzzService fizzBuzzService = new FizzBuzzService();
+            var fizzBuzzService = new FizzBuzzService();
             fizzBuzzService.CheckFizzBuzz(inputNumber);
         }
     }
